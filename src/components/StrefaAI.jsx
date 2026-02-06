@@ -82,7 +82,7 @@ const StrefaAI = () => {
             <span className="cudzyslow-lewy">"</span>
             <p className="tekst-cytatu">
               Sztuczna inteligencja to nie tylko narzędzie, to sposób myślenia o rozwiązywaniu problemów.
-              Stale uczę się i eksper ymentuję, aby tworzyć aplikacje wykorzystujące potencjał AI.
+              Stale uczę się i eksperymentuję, aby tworzyć aplikacje wykorzystujące potencjał AI.
             </p>
             <span className="cudzyslow-prawy">"</span>
           </div>

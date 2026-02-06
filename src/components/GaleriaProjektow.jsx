@@ -36,7 +36,7 @@ const GaleriaProjektow = () => {
   ];
 
   return (
-    <section id="galeria-projektow" className="obsz ar-wystawienniczy">
+    <section id="galeria-projektow" className="obszar-wystawienniczy">
       <div className="obudowa-sekcyjna">
         <div 
           ref={refTytulu}
