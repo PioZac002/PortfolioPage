@@ -1,0 +1,389 @@
+.sektor-kontaktowy {
+  padding: 8rem 2rem;
+  position: relative;
+  background: radial-gradient(ellipse at top, #0d0d16 0%, var(--kolor-ciemny) 60%);
+  overflow: hidden;
+}
+
+.obudowa-kontenera {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.naglowek-kontaktu {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.znacznik-maly {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: var(--kolor-niebieski);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.tytul-kontaktowy {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+}
+
+.gradientowy-tekst {
+  background: linear-gradient(135deg, var(--kolor-fioletowy), var(--kolor-niebieski));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.opis-wstepny {
+  font-size: 1.15rem;
+  color: var(--kolor-szary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.uklad-kontaktu {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.panel-informacyjny {
+  position: relative;
+}
+
+.bloczek-info {
+  margin-bottom: 3rem;
+}
+
+.podtytul-info {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--kolor-niebieski);
+}
+
+.tresc-info {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--kolor-szary);
+}
+
+.linki-spoleczne {
+  margin-bottom: 3rem;
+}
+
+.tytul-linkow {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--kolor-tekstu);
+  font-weight: 600;
+}
+
+.siatka-linkow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.przycisk-spoleczny {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--kolor-tekstu);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+}
+
+.przycisk-spoleczny:hover {
+  background: rgba(108, 99, 255, 0.12);
+  border-color: rgba(108, 99, 255, 0.4);
+  transform: translateX(8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.25);
+}
+
+.ikona-platformy {
+  font-size: 1.5rem;
+}
+
+.nazwa-platformy {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.dekoracyjny-blok {
+  position: relative;
+  height: 200px;
+  margin-top: 3rem;
+}
+
+.ornament {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.ornament-1 {
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.25), transparent 70%);
+  animation: unoszenieOrn1 6s ease-in-out infinite;
+}
+
+.ornament-2 {
+  top: 50px;
+  right: 30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent 70%);
+  animation: unoszenieOrn2 7s ease-in-out infinite;
+}
+
+.ornament-3 {
+  bottom: 20px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.18), transparent 70%);
+  animation: unoszenieOrn3 8s ease-in-out infinite;
+}
+
+@keyframes unoszenieOrn1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.1); }
+}
+
+@keyframes unoszenieOrn2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 20px) scale(1.15); }
+}
+
+@keyframes unoszenieOrn3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, -25px) scale(1.08); }
+}
+
+.plyta-formularza {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.plyta-formularza.formularz-aktywny {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.struktura-formularza {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.grupa-pola {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.etykieta-pola {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--kolor-tekstu);
+  letter-spacing: 0.5px;
+}
+
+.pole-formularza {
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1.05rem;
+  color: var(--kolor-tekstu);
+  font-family: 'Rajdhani', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.pole-formularza::placeholder {
+  color: var(--kolor-szary);
+  opacity: 0.6;
+}
+
+.pole-formularza:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--kolor-fioletowy);
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.25);
+}
+
+.pole-tekstowe {
+  resize: vertical;
+  min-height: 140px;
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 1.7;
+}
+
+.przycisk-wyslij {
+  background: linear-gradient(135deg, var(--kolor-fioletowy), var(--kolor-niebieski));
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.przycisk-wyslij::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.przycisk-wyslij:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.przycisk-wyslij:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.6);
+}
+
+.przycisk-wyslij:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.strzalka-wyslij {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.przycisk-wyslij:hover .strzalka-wyslij {
+  transform: translateX(6px);
+}
+
+.spinner-ladowania {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: obrotSpinnera 0.8s linear infinite;
+}
+
+@keyframes obrotSpinnera {
+  to { transform: rotate(360deg); }
+}
+
+.powiadomienie {
+  padding: 1.2rem 1.8rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  animation: wjazdPowiadomienia 0.5s ease-out;
+}
+
+@keyframes wjazdPowiadomienia {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.powiadomienie.sukces {
+  background: rgba(6, 255, 165, 0.15);
+  border: 1px solid rgba(6, 255, 165, 0.3);
+  color: #06FFA5;
+}
+
+.powiadomienie.blad {
+  background: rgba(245, 87, 108, 0.15);
+  border: 1px solid rgba(245, 87, 108, 0.3);
+  color: #f5576c;
+}
+
+@media (max-width: 968px) {
+  .sektor-kontaktowy {
+    padding: 6rem 2rem;
+  }
+
+  .uklad-kontaktu {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .tytul-kontaktowy {
+    font-size: 3rem;
+  }
+
+  .plyta-formularza {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .sektor-kontaktowy {
+    padding: 5rem 1.2rem;
+  }
+
+  .tytul-kontaktowy {
+    font-size: 2.5rem;
+  }
+
+  .plyta-formularza {
+    padding: 2rem;
+  }
+
+  .siatka-linkow {
+    grid-template-columns: 1fr;
+  }
+
+  .struktura-formularza {
+    gap: 1.5rem;
+  }
+}

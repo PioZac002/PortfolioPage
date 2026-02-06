@@ -1,0 +1,428 @@
+.strefa-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.tlo-iframe-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.tlo-iframe-3d iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.warstwa-nakładki-gradientu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 10, 15, 0.7) 70%, var(--kolor-ciemny) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tresc-centralna-hero {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  animation: pojawienieSieHero 1.2s ease-out;
+}
+
+@keyframes pojawienieSieHero {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.awatar-kontener {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  animation: opadanieAvatara 1s ease-out 0.3s backwards;
+}
+
+@keyframes opadanieAvatara {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ramka-swiecaca {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--kolor-fioletowy), var(--kolor-niebieski));
+  animation: obrotRamki 8s linear infinite;
+}
+
+@keyframes obrotRamki {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ramka-swiecaca::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--kolor-fioletowy), var(--kolor-niebieski));
+  filter: blur(20px);
+  opacity: 0.6;
+  animation: pulsacjaBlasku 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulsacjaBlasku {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.obrazek-avatara {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--kolor-ciemny);
+}
+
+.tytul-powitanie {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  animation: wjazdTytulu 1s ease-out 0.5s backwards;
+}
+
+@keyframes wjazdTytulu {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.tekst-witam {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--kolor-szary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.imie-gradient {
+  display: block;
+  background: linear-gradient(135deg, var(--kolor-fioletowy) 0%, var(--kolor-niebieski) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: przesuniecieGradientu 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes przesuniecieGradientu {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.opis-roli {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--kolor-niebieski);
+  animation: rozjasnianieOpisu 1s ease-out 0.7s backwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+@keyframes rozjasnianieOpisu {
+  from {
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 1px;
+  }
+}
+
+.tag-otwierajacy,
+.tag-zamykajacy {
+  color: var(--kolor-fioletowy);
+  font-size: 1.8rem;
+  opacity: 0.7;
+  animation: miganieTagu 2s ease-in-out infinite;
+}
+
+@keyframes miganieTagu {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.rola-tekst {
+  letter-spacing: 1px;
+}
+
+.motto-developerskie {
+  font-size: 1.2rem;
+  color: var(--kolor-szary);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  animation: wylanianieMottosu 1s ease-out 0.9s backwards;
+}
+
+@keyframes wylanianieMottosu {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.przyciski-hero-akcji {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  animation: pojawieniePrzyciskow 1s ease-out 1.1s backwards;
+}
+
+@keyframes pojawieniePrzyciskow {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.przycisk-glowny-hero,
+.przycisk-dodatkowy-hero {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1px;
+}
+
+.przycisk-glowny-hero {
+  background: linear-gradient(135deg, var(--kolor-fioletowy), var(--kolor-niebieski));
+  color: white;
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
+}
+
+.przycisk-glowny-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.przycisk-glowny-hero:hover::before {
+  left: 100%;
+}
+
+.przycisk-glowny-hero:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.6);
+}
+
+.ikona-strzalki {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.przycisk-glowny-hero:hover .ikona-strzalki {
+  transform: translateX(5px);
+}
+
+.przycisk-dodatkowy-hero {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(108, 99, 255, 0.3);
+  color: var(--kolor-tekstu);
+  backdrop-filter: blur(10px);
+}
+
+.przycisk-dodatkowy-hero:hover {
+  background: rgba(108, 99, 255, 0.1);
+  border-color: var(--kolor-fioletowy);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+}
+
+.wskaznik-przewijania {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: pojawieniePrzewijania 1s ease-out 1.3s backwards;
+}
+
+@keyframes pojawieniePrzewijania {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mysz-animowana {
+  width: 28px;
+  height: 45px;
+  border: 2px solid var(--kolor-fioletowy);
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
+}
+
+.kolko-przewijania {
+  width: 6px;
+  height: 6px;
+  background: var(--kolor-niebieski);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spadanieKulki 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--kolor-niebieski);
+}
+
+@keyframes spadanieKulki {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 28px;
+    opacity: 0;
+  }
+}
+
+.tekst-przewijania {
+  font-size: 0.9rem;
+  color: var(--kolor-szary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 968px) {
+  .tytul-powitanie {
+    font-size: 3rem;
+  }
+
+  .tekst-witam {
+    font-size: 1.4rem;
+  }
+
+  .opis-roli {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .motto-developerskie {
+    font-size: 1.1rem;
+  }
+
+  .ramka-swiecaca {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 580px) {
+  .strefa-hero {
+    padding: 0 1.2rem;
+  }
+
+  .tytul-powitanie {
+    font-size: 2.2rem;
+  }
+
+  .tekst-witam {
+    font-size: 1.1rem;
+  }
+
+  .opis-roli {
+    font-size: 1rem;
+  }
+
+  .motto-developerskie {
+    font-size: 1rem;
+  }
+
+  .przyciski-hero-akcji {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .przycisk-glowny-hero,
+  .przycisk-dodatkowy-hero {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .ramka-swiecaca {
+    width: 130px;
+    height: 130px;
+  }
+}
