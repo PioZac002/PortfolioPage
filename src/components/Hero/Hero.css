@@ -1,0 +1,420 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.hero-canvas-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, var(--bg-color) 70%, var(--bg-color) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content-center {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  animation: heroFadeIn 1.2s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.avatar-container {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  animation: avatarDrop 1s ease-out 0.3s backwards;
+}
+
+@keyframes avatarDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.glowing-frame {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  animation: frameRotate 8s linear infinite;
+}
+
+@keyframes frameRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.glowing-frame::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  filter: blur(20px);
+  opacity: 0.6;
+  animation: glowPulse 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-color);
+}
+
+.hero-greeting {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  animation: titleSlide 1s ease-out 0.5s backwards;
+}
+
+@keyframes titleSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.greeting-text {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--gray-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.name-gradient {
+  display: block;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.role-description {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  animation: roleReveal 1s ease-out 0.7s backwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+@keyframes roleReveal {
+  from {
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 1px;
+  }
+}
+
+.tag-open,
+.tag-close {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  opacity: 0.7;
+  animation: tagBlink 2s ease-in-out infinite;
+}
+
+@keyframes tagBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.role-text {
+  letter-spacing: 1px;
+}
+
+.hero-motto {
+  font-size: 1.2rem;
+  color: var(--gray-color);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  animation: mottoFadeIn 1s ease-out 0.9s backwards;
+}
+
+@keyframes mottoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  animation: buttonsAppear 1s ease-out 1.1s backwards;
+}
+
+@keyframes buttonsAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1px;
+}
+
+.hero-primary-button {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: 0 8px 30px var(--glow-color);
+}
+
+.hero-primary-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.hero-primary-button:hover::before {
+  left: 100%;
+}
+
+.hero-primary-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px var(--glow-color);
+}
+
+.arrow-icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-primary-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.hero-secondary-button {
+  background: var(--glass-color);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  backdrop-filter: blur(10px);
+}
+
+.hero-secondary-button:hover {
+  background: var(--glass-hover-color);
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px var(--glow-color);
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: scrollAppear 1s ease-out 1.3s backwards;
+}
+
+@keyframes scrollAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mouse-animated {
+  width: 28px;
+  height: 45px;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.scroll-wheel {
+  width: 6px;
+  height: 6px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheelScroll 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+@keyframes wheelScroll {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 28px;
+    opacity: 0;
+  }
+}
+
+.scroll-text {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 968px) {
+  .hero-greeting {
+    font-size: 3rem;
+  }
+
+  .greeting-text {
+    font-size: 1.4rem;
+  }
+
+  .role-description {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-motto {
+    font-size: 1.1rem;
+  }
+
+  .glowing-frame {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-section {
+    padding: 0 1.2rem;
+  }
+
+  .hero-greeting {
+    font-size: 2.2rem;
+  }
+
+  .greeting-text {
+    font-size: 1.1rem;
+  }
+
+  .role-description {
+    font-size: 1rem;
+  }
+
+  .hero-motto {
+    font-size: 1rem;
+  }
+
+  .hero-action-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-primary-button,
+  .hero-secondary-button {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .glowing-frame {
+    width: 130px;
+    height: 130px;
+  }
+}
