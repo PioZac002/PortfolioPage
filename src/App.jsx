@@ -1,24 +1,30 @@
-import PasekNawigacyjny from './components/PasekNawigacyjny';
-import SekcjaHero from './components/SekcjaHero';
-import StrefaInformacji from './components/StrefaInformacji';
-import TechZone from './components/TechZone';
-import GaleriaProjektow from './components/GaleriaProjektow';
-import StrefaAI from './components/StrefaAI';
-import FormularzKontakt from './components/FormularzKontakt';
-import StopkaStrony from './components/StopkaStrony';
+import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import TechStack from './components/TechStack/TechStack';
+import Projects from './components/Projects/Projects';
+import AIInnovation from './components/AIInnovation/AIInnovation';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <div className="aplikacja-portfolio">
-      <PasekNawigacyjny />
-      <SekcjaHero />
-      <StrefaInformacji />
-      <TechZone />
-      <GaleriaProjektow />
-      <StrefaAI />
-      <FormularzKontakt />
-      <StopkaStrony />
-    </div>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="portfolio-app">
+          <Navbar />
+          <Hero />
+          <About />
+          <TechStack />
+          <Projects />
+          <AIInnovation />
+          <Contact />
+          <Footer />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 };
 

@@ -1,5 +1,8 @@
-.aplikacja-portfolio {
+.portfolio-app {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

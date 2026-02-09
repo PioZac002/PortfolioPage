@@ -1,0 +1,232 @@
+.tech-stack-section {
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-stack-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--glow-color), transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.main-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.title-block {
+  text-align: center;
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.title-block.reveal-title {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.small-text {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.large-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+}
+
+.colorful-expression {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-description {
+  font-size: 1.2rem;
+  color: var(--gray-color);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.categories-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+}
+
+.categories-layout.show-categories {
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tech-box {
+  background: var(--glass-color);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  animation: categorySlideUp 0.6s ease-out forwards;
+  animation-delay: var(--category-delay);
+  opacity: 0;
+}
+
+@keyframes categorySlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 40px var(--glow-color);
+  background: var(--glass-hover-color);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.category-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px currentColor;
+}
+
+.category-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.tech-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-badge {
+  background: var(--glass-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  cursor: default;
+  opacity: 0;
+  animation: badgeFadeIn 0.4s ease-out forwards;
+  animation-delay: calc(var(--category-delay) + var(--badge-delay));
+}
+
+@keyframes badgeFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tech-badge:hover {
+  background: var(--glass-hover-color);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px var(--glow-color);
+}
+
+.tech-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 968px) {
+  .tech-stack-section {
+    padding: 6rem 2rem;
+  }
+
+  .large-title {
+    font-size: 2.8rem;
+  }
+
+  .categories-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-box {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .tech-stack-section {
+    padding: 5rem 1.2rem;
+  }
+
+  .large-title {
+    font-size: 2.2rem;
+  }
+
+  .tech-box {
+    padding: 1.5rem;
+  }
+
+  .tech-badge {
+    padding: 0.5rem 1rem;
+  }
+
+  .tech-name {
+    font-size: 0.85rem;
+  }
+}
