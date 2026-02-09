@@ -1,0 +1,317 @@
+.about-section {
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--glow-color), transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.section-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.section-header.slide-in-top {
+  animation: slideInTop 0.8s ease-out forwards;
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.small-label {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.gradient-underline {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.glass-panel-description {
+  background: var(--glass-color);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+}
+
+.glass-panel-description.slide-in-left {
+  animation: slideInLeft 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-block {
+  margin-bottom: 3rem;
+}
+
+.block-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.description-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--gray-color);
+  margin-bottom: 1.3rem;
+}
+
+.color-accent {
+  color: var(--text-color);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  opacity: 0;
+}
+
+.features-grid.slide-in-right {
+  animation: slideInRight 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-card {
+  background: var(--glass-color);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: cardAppear 0.6s ease-out forwards;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 40px var(--glow-color);
+  background: var(--glass-hover-color);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.feature-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.feature-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+}
+
+.highlight-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover .highlight-line {
+  opacity: 1;
+}
+
+@media (max-width: 968px) {
+  .about-section {
+    padding: 6rem 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+  }
+
+  .glass-panel-description {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .about-section {
+    padding: 5rem 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
