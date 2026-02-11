@@ -59,7 +59,7 @@ export default {
     resp6: 'Creating and maintaining runbooks, knowledge articles, and troubleshooting guides',
     // Education
     education: 'Education',
-    degree: 'Bachelor\'s Degree in Applied Computer Science',
+    degree: "Bachelor's Degree in Applied Computer Science",
     university: 'Politechnika Bydgoska',
     universityFull: 'Bydgoszcz University of Science and Technology',
     fieldOfStudy: 'Computer Science and Technology',
