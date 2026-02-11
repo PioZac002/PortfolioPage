@@ -1,44 +1,44 @@
 import { useEffect, useRef, useState } from 'react';
 
 export const useScrollAnimation = (params = {}) => {
-  const elementoRef = useRef(null);
-  const [jestWidoczny, setJestWidoczny] = useState(false);
-  const czyJuzWykonano = useRef(false);
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const hasAnimated = useRef(false);
   
-  const progWidocznosci = params.threshold || 0.2;
-  const marginesKrawedzi = params.margin || '0px';
-  const pozwolNaPowtorke = params.repeat === true;
+  const visibilityThreshold = params.threshold || 0.2;
+  const edgeMargin = params.margin || '0px';
+  const allowRepeat = params.repeat === true;
 
   useEffect(() => {
-    const elementDoSledzenia = elementoRef.current;
-    if (!elementDoSledzenia) return;
+    const elementToObserve = elementRef.current;
+    if (!elementToObserve) return;
 
-    const akcjaPojawieniaSie = (listaWpisow) => {
-      listaWpisow.forEach(wpis => {
-        const widocznyTeraz = wpis.isIntersecting;
-        const pierwszyRaz = !czyJuzWykonano.current;
+    const handleIntersection = (entries) => {
+      entries.forEach(entry => {
+        const isCurrentlyVisible = entry.isIntersecting;
+        const isFirstTime = !hasAnimated.current;
         
-        if (widocznyTeraz && pierwszyRaz) {
-          setJestWidoczny(true);
-          if (!pozwolNaPowtorke) {
-            czyJuzWykonano.current = true;
+        if (isCurrentlyVisible && isFirstTime) {
+          setIsVisible(true);
+          if (!allowRepeat) {
+            hasAnimated.current = true;
           }
-        } else if (!widocznyTeraz && pozwolNaPowtorke) {
-          setJestWidoczny(false);
-          czyJuzWykonano.current = false;
+        } else if (!isCurrentlyVisible && allowRepeat) {
+          setIsVisible(false);
+          hasAnimated.current = false;
         }
       });
     };
 
-    const obserwatorPrzewijania = new IntersectionObserver(akcjaPojawieniaSie, {
-      threshold: progWidocznosci,
-      rootMargin: marginesKrawedzi
+    const scrollObserver = new IntersectionObserver(handleIntersection, {
+      threshold: visibilityThreshold,
+      rootMargin: edgeMargin
     });
 
-    obserwatorPrzewijania.observe(elementDoSledzenia);
+    scrollObserver.observe(elementToObserve);
 
-    return () => obserwatorPrzewijania.disconnect();
-  }, [progWidocznosci, marginesKrawedzi, pozwolNaPowtorke]);
+    return () => scrollObserver.disconnect();
+  }, [visibilityThreshold, edgeMargin, allowRepeat]);
 
-  return [elementoRef, jestWidoczny];
+  return [elementRef, isVisible];
 };

@@ -45,8 +45,34 @@ export default {
     // Real CV data
     realName: 'Piotr Zaczyk',
     currentRole: 'Full Stack Developer & AI Enthusiast',
+    // Professional Experience
+    workExperience: 'Work Experience',
+    jobTitle: 'Operation Analyst',
+    company: 'Quad Europe',
+    jobType: 'Fully Remote Position',
+    responsibilities: 'Key Responsibilities',
+    resp1: 'Debugging .NET applications using Visual Studio (breakpoints, call stack analysis) with JetBrains ReSharper',
+    resp2: 'Reviewing application defects and extracting logs to pinpoint root causes',
+    resp3: 'Writing and optimizing SQL queries for data extraction, validation, analysis, and reporting',
+    resp4: 'Managing end-to-end incidents — collaborating with development teams to reproduce issues, report defects, and track fixes through to resolution',
+    resp5: 'Supporting hotfix coordination and post-deployment validation to ensure application stability',
+    resp6: 'Creating and maintaining runbooks, knowledge articles, and troubleshooting guides',
+    // Education
     education: 'Education',
-    workExperience: 'Work Experience'
+    degree: "Bachelor's Degree in Applied Computer Science",
+    university: 'Politechnika Bydgoska',
+    universityFull: 'Bydgoszcz University of Science and Technology',
+    fieldOfStudy: 'Computer Science and Technology',
+    studyPeriod: 'October 2021 – February 2025',
+    programDescription: 'Program covering software engineering, system design, and system modeling',
+    // Certifications & Courses
+    certifications: 'Certifications & Courses',
+    cert1: 'Complete React, Next.js & TypeScript Projects Course 2025',
+    cert1Provider: 'Udemy',
+    cert2: 'HTML/CSS Tutorial and Projects Course',
+    cert2Provider: 'Udemy',
+    cert3: 'Complete React, Next.js Tutorial and Projects Course',
+    cert3Provider: 'FlexGrid'
   },
 
   // Tech Stack Section

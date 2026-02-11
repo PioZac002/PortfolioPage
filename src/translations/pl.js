@@ -45,8 +45,34 @@ export default {
     // Real CV data
     realName: 'Piotr Zaczyk',
     currentRole: 'Full Stack Developer & AI Enthusiast',
+    // Professional Experience
+    workExperience: 'Doświadczenie zawodowe',
+    jobTitle: 'Analityk Operacyjny',
+    company: 'Quad Europe',
+    jobType: 'Praca w pełni zdalna',
+    responsibilities: 'Kluczowe obowiązki',
+    resp1: 'Debugowanie aplikacji .NET przy użyciu Visual Studio (breakpointy, analiza call stack) z JetBrains ReSharper',
+    resp2: 'Przeglądanie błędów aplikacji i wydobywanie logów w celu identyfikacji przyczyn źródłowych',
+    resp3: 'Pisanie i optymalizacja zapytań SQL do ekstrakcji danych, walidacji, analizy i raportowania',
+    resp4: 'Zarządzanie incydentami od początku do końca — współpraca z zespołami deweloperskimi w celu odtworzenia problemów, zgłaszania defektów i śledzenia poprawek aż do rozwiązania',
+    resp5: 'Wsparcie koordynacji hotfixów i walidacji po wdrożeniu w celu zapewnienia stabilności aplikacji',
+    resp6: 'Tworzenie i utrzymywanie runbooków, artykułów wiedzy oraz przewodników rozwiązywania problemów',
+    // Education
     education: 'Wykształcenie',
-    workExperience: 'Doświadczenie zawodowe'
+    degree: 'Licencjat z Informatyki Stosowanej',
+    university: 'Politechnika Bydgoska',
+    universityFull: 'Politechnika Bydgoska im. Jana i Jędrzeja Śniadeckich',
+    fieldOfStudy: 'Informatyka i Technologie Komputerowe',
+    studyPeriod: 'Październik 2021 – Luty 2025',
+    programDescription: 'Program obejmujący inżynierię oprogramowania, projektowanie systemów i modelowanie systemów',
+    // Certifications & Courses
+    certifications: 'Certyfikaty i Kursy',
+    cert1: 'Complete React, Next.js & TypeScript Projects Course 2025',
+    cert1Provider: 'Udemy',
+    cert2: 'HTML/CSS Tutorial and Projects Course',
+    cert2Provider: 'Udemy',
+    cert3: 'Complete React, Next.js Tutorial and Projects Course',
+    cert3Provider: 'FlexGrid'
   },
 
   // Tech Stack Section
