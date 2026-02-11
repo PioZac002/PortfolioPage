@@ -42,8 +42,11 @@ const Hero = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(108, 99, 255, 0.5)';
+        ctx.fillStyle = 'rgba(108, 99, 255, 0.8)';
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = 'rgba(108, 99, 255, 0.9)';
         ctx.fill();
+        ctx.shadowBlur = 0;
       }
     }
 
@@ -73,9 +76,12 @@ const Hero = () => {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 212, 255, ${0.2 * (1 - distance / 150)})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(0, 212, 255, ${0.4 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'rgba(0, 212, 255, 0.5)';
             ctx.stroke();
+            ctx.shadowBlur = 0;
           }
         });
       });

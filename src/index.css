@@ -14,15 +14,15 @@
 [data-theme="dark"] {
   --primary-color: #6C63FF;
   --secondary-color: #00D4FF;
-  --bg-color: #0a0a0f;
-  --bg-layer-color: #12121a;
+  --bg-color: #0d0d1a;
+  --bg-layer-color: #15152a;
   --glass-color: rgba(255, 255, 255, 0.05);
   --glass-hover-color: rgba(255, 255, 255, 0.08);
   --text-color: #e8e8f2;
   --gray-color: #8b8b9f;
-  --border-color: rgba(108, 99, 255, 0.2);
-  --glow-color: rgba(108, 99, 255, 0.4);
-  --card-bg: rgba(18, 18, 26, 0.6);
+  --border-color: rgba(108, 99, 255, 0.25);
+  --glow-color: rgba(108, 99, 255, 0.5);
+  --card-bg: rgba(21, 21, 36, 0.7);
   --gradient-start: #6C63FF;
   --gradient-end: #00D4FF;
 }
@@ -31,15 +31,15 @@
 [data-theme="light"] {
   --primary-color: #5548E6;
   --secondary-color: #00B4D8;
-  --bg-color: #f8f9fa;
-  --bg-layer-color: #ffffff;
-  --glass-color: rgba(0, 0, 0, 0.03);
-  --glass-hover-color: rgba(0, 0, 0, 0.06);
+  --bg-color: #f0f0ff;
+  --bg-layer-color: #fafaff;
+  --glass-color: rgba(0, 0, 0, 0.04);
+  --glass-hover-color: rgba(0, 0, 0, 0.08);
   --text-color: #1a1a2e;
   --gray-color: #6c757d;
-  --border-color: rgba(85, 72, 230, 0.2);
-  --glow-color: rgba(85, 72, 230, 0.3);
-  --card-bg: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(85, 72, 230, 0.25);
+  --glow-color: rgba(85, 72, 230, 0.35);
+  --card-bg: rgba(255, 255, 255, 0.85);
   --gradient-start: #5548E6;
   --gradient-end: #00B4D8;
 }

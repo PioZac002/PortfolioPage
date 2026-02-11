@@ -270,6 +270,253 @@
   opacity: 1;
 }
 
+/* Experience Section Styles */
+.experience-section {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  opacity: 0;
+}
+
+.experience-section.fade-in-up {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-card {
+  background: var(--glass-color);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 35px var(--glow-color);
+  background: var(--glass-hover-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.card-content {
+  color: var(--gray-color);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.timeline-content {
+  padding-left: 1rem;
+}
+
+.job-title,
+.degree-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.company-info,
+.university-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-name,
+.university-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.university-full {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  font-style: italic;
+}
+
+.job-type-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--glass-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.responsibilities-section,
+.study-details {
+  margin-top: 1.5rem;
+}
+
+.responsibilities-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.responsibilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibility-item {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--gray-color);
+}
+
+.responsibility-item::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.field-of-study,
+.study-period,
+.program-description {
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.field-of-study strong {
+  color: var(--text-color);
+}
+
+.study-period {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.certifications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--glass-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.certification-item:hover {
+  background: var(--glass-hover-color);
+  border-color: var(--primary-color);
+  transform: translateX(8px);
+}
+
+.cert-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cert-details {
+  flex: 1;
+}
+
+.cert-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.cert-provider {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
 @media (max-width: 968px) {
   .about-section {
     padding: 6rem 2rem;
@@ -290,6 +537,24 @@
 
   .glass-panel-description {
     padding: 2rem;
+  }
+
+  .experience-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .experience-card {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .job-title,
+  .degree-title {
+    font-size: 1.3rem;
   }
 }
 
@@ -313,5 +578,47 @@
 
   .feature-card {
     padding: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-icon {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .job-title,
+  .degree-title {
+    font-size: 1.2rem;
+  }
+
+  .company-info,
+  .university-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-content {
+    padding-left: 0.5rem;
+  }
+
+  .cert-name {
+    font-size: 0.95rem;
   }
 }
