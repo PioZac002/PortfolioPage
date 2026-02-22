@@ -12,9 +12,9 @@ export default {
   // Hero Section
   hero: {
     greeting: 'Hello, I am',
-    name: 'PioZac002',
+    name: 'Piotr Zaćmiński',
     role: 'Full Stack Developer & AI Enthusiast',
-    description: 'I create modern web applications using the latest technologies and artificial intelligence. I transform ideas into working solutions.',
+    description: 'I develop modern web applications using the latest technologies, exploring the potential of artificial intelligence to optimize workflows. I transform ideas into working solutions.',
     exploreProjects: 'Explore Projects',
     contactMe: 'Contact Me',
     scrollDown: 'Scroll Down'
@@ -25,8 +25,8 @@ export default {
     label: 'Get to know me',
     title: 'About Me',
     subtitle: 'Technology Enthusiast',
-    description1: 'I am a {fullStack} with a passion for creating modern web applications. I specialize in the JavaScript/TypeScript ecosystem, building solutions from frontend to backend.',
-    description2: 'I am fascinated by {ai} and its application in everyday applications. I constantly develop my skills, experimenting with new frameworks and technologies.',
+    description1: 'I am an aspiring {fullStack} developer passionate about creating modern web applications. I specialize in web development using the JavaScript/TypeScript ecosystem and its frameworks, building solutions from frontend to backend.',
+    description2: 'I am fascinated by {ai} and its application in everyday use. I constantly develop my skills, experimenting with new frameworks and technologies.',
     description3: 'I believe that good code is one that is {clean}. I treat each project as an opportunity to learn something new and improve my skills.',
     fullStack: 'full-stack developer',
     ai: 'artificial intelligence',
@@ -43,7 +43,7 @@ export default {
     innovation: 'Innovation',
     innovationDesc: 'I use the latest technologies and trends in development',
     // Real CV data
-    realName: 'Piotr Zaczyk',
+    realName: 'Piotr Zaćmiński',
     currentRole: 'Full Stack Developer & AI Enthusiast',
     // Professional Experience
     workExperience: 'Work Experience',

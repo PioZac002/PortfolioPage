@@ -12,9 +12,9 @@ export default {
   // Hero Section
   hero: {
     greeting: 'Witaj, jestem',
-    name: 'PioZac002',
+    name: 'Piotr Zaćmiński',
     role: 'Full Stack Developer & AI Enthusiast',
-    description: 'Tworzę nowoczesne aplikacje webowe z wykorzystaniem najnowszych technologii i sztucznej inteligencji. Przekształcam pomysły w działające rozwiązania.',
+    description: 'Tworzę nowoczesne aplikacje webowe z wykorzystaniem najnowszych technologii, eksplorując potencjał sztucznej inteligencji do optymalizacji procesów pracy. Przekształcam pomysły w działające rozwiązania.',
     exploreProjects: 'Odkryj Projekty',
     contactMe: 'Skontaktuj się',
     scrollDown: 'Przewiń w dół'
@@ -25,7 +25,7 @@ export default {
     label: 'Poznaj mnie bliżej',
     title: 'O mnie',
     subtitle: 'Pasjonat Technologii',
-    description1: 'Jestem {fullStack} z pasją do tworzenia nowoczesnych aplikacji webowych. Specjalizuję się w ekosystemie JavaScript/TypeScript, budując rozwiązania od frontendu po backend.',
+    description1: 'Jestem aspirującym {fullStack} z pasją do tworzenia nowoczesnych aplikacji webowych. Specjalizuję się w tworzeniu aplikacji webowych z wykorzystaniem ekosystemu JavaScript/TypeScript oraz jego frameworków, budując rozwiązania od frontendu po backend.',
     description2: 'Fascynuje mnie {ai} i jej zastosowanie w codziennych aplikacjach. Stale rozwijam swoje umiejętności, eksperymentując z nowymi frameworkami i technologiami.',
     description3: 'Wierzę, że dobry kod to taki, który jest {clean}. Każdy projekt traktuję jako szansę na naukę czegoś nowego i doskonalenie swoich umiejętności.',
     fullStack: 'full-stack developerem',
@@ -47,7 +47,7 @@ export default {
     currentRole: 'Full Stack Developer & AI Enthusiast',
     // Professional Experience
     workExperience: 'Doświadczenie zawodowe',
-    jobTitle: 'Analityk Operacyjny',
+    jobTitle: 'Analityk Procesów Wsparcia',
     company: 'Quad Europe',
     jobType: 'Praca w pełni zdalna',
     responsibilities: 'Kluczowe obowiązki',
@@ -59,7 +59,7 @@ export default {
     resp6: 'Tworzenie i utrzymywanie runbooków, artykułów wiedzy oraz przewodników rozwiązywania problemów',
     // Education
     education: 'Wykształcenie',
-    degree: 'Licencjat z Informatyki Stosowanej',
+    degree: 'Inżynier Informatyki Stosowanej',
     university: 'Politechnika Bydgoska',
     universityFull: 'Politechnika Bydgoska im. Jana i Jędrzeja Śniadeckich',
     fieldOfStudy: 'Informatyka i Technologie Komputerowe',
@@ -100,11 +100,11 @@ export default {
     // Individual projects
     taskSystem: {
       name: 'TaskSystemFront',
-      description: 'System zarządzania zadaniami z interfejsem użytkownika i zaawansowanym trackingiem'
+      description: 'System zarządzania projektami z interfejsem użytkownika i zaawansowanym trackingiem'
     },
     barberApp: {
       name: 'BarberAppv2',
-      description: 'Aplikacja dla barbershopów z systemem rezerwacji i zarządzaniem klientami'
+      description: 'Aplikacja dla barbershopów z systemem rezerwacji i zarządzaniem personelem i wizytami'
     },
     crushApp: {
       name: 'CrushApp',
