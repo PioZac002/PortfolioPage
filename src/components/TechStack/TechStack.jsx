@@ -21,7 +21,8 @@ const TechStack = () => {
       category: t.techStack.backend,
       color: '#00D4FF',
       technologies: [
-        'Node.js', 'Express.js', 'MongoDB', 'Prisma'
+        'Node.js', 'Express.js', 'MongoDB',
+        '.NET (OOP basics)', 'Java (OOP basics)', 'C / C++ (basics)'
       ]
     },
     {
@@ -35,7 +36,8 @@ const TechStack = () => {
       category: t.techStack.tools,
       color: '#F72585',
       technologies: [
-        'Git', 'GitHub', 'Azure DevOps', 'Postman', 'Docker', 'Figma', 'Vite'
+        'Git', 'GitHub', 'Azure DevOps', 'Postman', 'Docker', 'Figma', 'Vite',
+        'AWS (basics)'
       ]
     }
   ];

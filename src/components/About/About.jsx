@@ -44,7 +44,9 @@ const About = () => {
   const certifications = [
     { name: t.about.cert1, provider: t.about.cert1Provider },
     { name: t.about.cert2, provider: t.about.cert2Provider },
-    { name: t.about.cert3, provider: t.about.cert3Provider }
+    { name: t.about.cert3, provider: t.about.cert3Provider },
+    { name: t.about.cert4, provider: t.about.cert4Provider },
+    { name: t.about.cert5, provider: t.about.cert5Provider }
   ];
 
   return (

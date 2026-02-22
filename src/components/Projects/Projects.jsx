@@ -34,6 +34,15 @@ const Projects = () => {
       demoLink: null,
       gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       icon: '💬'
+    },
+    {
+      name: t.projects.portfolioPage.name,
+      description: t.projects.portfolioPage.description,
+      tech: ['React', 'Vite', 'CSS3'],
+      repoLink: 'https://github.com/PioZac002/PortfolioPage',
+      demoLink: null,
+      gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+      icon: '🌐'
     }
   ];
 
