@@ -68,11 +68,15 @@ export default {
     // Certifications & Courses
     certifications: 'Certifications & Courses',
     cert1: 'Complete React, Next.js & TypeScript Projects Course 2025',
-    cert1Provider: 'Udemy',
+    cert1Provider: 'Udemy – Jānis Smilga',
     cert2: 'HTML/CSS Tutorial and Projects Course',
-    cert2Provider: 'Udemy',
+    cert2Provider: 'Udemy – Jānis Smilga',
     cert3: 'Complete React, Next.js Tutorial and Projects Course',
-    cert3Provider: 'FlexGrid'
+    cert3Provider: 'Udemy – Jānis Smilga',
+    cert4: 'Javascript Tutorial and Projects Course',
+    cert4Provider: 'Udemy – Jānis Smilga',
+    cert5: 'Agile Project Management – Agile PM Foundation',
+    cert5Provider: 'Training Centre ProcessTeam'
   },
 
   // Tech Stack Section
@@ -105,6 +109,10 @@ export default {
     crushApp: {
       name: 'CrushApp',
       description: 'Interactive social application with user interaction features'
+    },
+    portfolioPage: {
+      name: 'Portfolio Page',
+      description: 'Personal portfolio website – modern design, animations, multilingual support and dark/light theme'
     }
   },
 
@@ -125,14 +133,11 @@ export default {
   contact: {
     label: 'Let\'s connect',
     title: 'Contact',
-    description: 'Have a question or project? Write to me!',
-    name: 'Your name',
-    email: 'Your email',
-    message: 'Message',
-    send: 'Send message',
-    sending: 'Sending...',
-    success: 'Message sent!',
-    error: 'Error sending'
+    description: 'I\'m happy to talk about new projects, collaboration, or just technology. Feel free to reach out!',
+    githubBtn: 'GitHub',
+    linkedinBtn: 'LinkedIn',
+    emailBtn: 'Copy e-mail',
+    emailCopied: 'E-mail copied to clipboard!'
   },
 
   // Footer

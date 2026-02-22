@@ -1,3 +1,4 @@
+/* ── Section wrapper ───────────────────────────────────── */
 .contact-sector {
   padding: 8rem 2rem;
   position: relative;
@@ -5,13 +6,14 @@
 }
 
 .container-wrapper {
-  max-width: 1320px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
+/* ── Header ────────────────────────────────────────────── */
 .contact-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .small-tag {
@@ -38,201 +40,168 @@
   background-clip: text;
 }
 
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
-  align-items: start;
+.intro-description {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
-.info-panel, .form-plate {
+/* ── Connect card ──────────────────────────────────────── */
+.connect-card {
   background: var(--glass-color);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  padding: 3rem;
-}
-
-.info-subtitle {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.info-content {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--gray-color);
-  margin-bottom: 2rem;
-}
-
-.social-links {
-  margin-top: 2.5rem;
-}
-
-.links-title {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-color);
-}
-
-.links-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.social-button {
+  padding: 3rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 1rem;
-  background: var(--glass-color);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: all 0.3s ease;
-}
-
-.social-button:hover {
-  background: var(--glass-hover-color);
-  border-color: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px var(--glow-color);
-}
-
-.platform-icon {
-  font-size: 1.5rem;
-}
-
-.platform-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.form-plate {
+  gap: 2rem;
   opacity: 0;
+  transform: translateY(30px);
+  transition: none;
 }
 
-.form-plate.form-active {
-  animation: formFadeIn 0.8s ease-out forwards;
+.connect-card.connect-card-active {
+  animation: cardFadeIn 0.8s ease-out forwards;
 }
 
-@keyframes formFadeIn {
+@keyframes cardFadeIn {
   from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.form-structure {
+/* ── Buttons row ───────────────────────────────────────── */
+.connect-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.field-label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-color);
-}
-
-.form-field {
-  padding: 1rem;
-  background: var(--glass-color);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  color: var(--text-color);
+/* ── Single connect button ─────────────────────────────── */
+.connect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.form-field:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 15px var(--glow-color);
-}
-
-.text-field {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.send-button {
-  padding: 1.2rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
   cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.connect-btn__icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.send-button:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px var(--glow-color);
+/* GitHub */
+.connect-btn--github {
+  background: #161b22;
+  color: #fff;
+  border-color: #30363d;
+}
+.connect-btn--github:hover {
+  background: #21262d;
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(108,99,255,0.35);
 }
 
-.send-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+/* LinkedIn */
+.connect-btn--linkedin {
+  background: #0a66c2;
+  color: #fff;
+  border-color: #0a66c2;
+}
+.connect-btn--linkedin:hover {
+  background: #0958a8;
+  border-color: #0958a8;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(10,102,194,0.45);
 }
 
-.loading-spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
+/* Email */
+.connect-btn--email {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  border-color: transparent;
+}
+.connect-btn--email:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px var(--glow-color);
+  filter: brightness(1.1);
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Copied state */
+.connect-btn--copied {
+  background: linear-gradient(135deg, #06ffa5, #00d4ff);
+  border-color: transparent;
 }
 
-.notification {
-  padding: 1rem;
-  border-radius: 8px;
+/* ── Toast notification ────────────────────────────────── */
+.email-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 2rem;
+  background: rgba(6, 255, 165, 0.08);
+  border: 1px solid rgba(6, 255, 165, 0.35);
+  border-radius: 12px;
+  animation: toastPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: center;
-  font-weight: 600;
 }
 
-.notification.success {
-  background: rgba(6, 255, 165, 0.1);
-  border: 1px solid rgba(6, 255, 165, 0.3);
-  color: #06FFA5;
+@keyframes toastPop {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-.notification.error {
-  background: rgba(255, 99, 99, 0.1);
-  border: 1px solid rgba(255, 99, 99, 0.3);
-  color: #ff6363;
+.email-toast__address {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #06ffa5;
+  word-break: break-all;
 }
 
+.email-toast__msg {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 968px) {
-  .contact-sector { padding: 6rem 2rem; }
-  .contact-layout { grid-template-columns: 1fr; }
-  .contact-title { font-size: 2.8rem; }
+  .contact-sector  { padding: 6rem 2rem; }
+  .contact-title   { font-size: 2.8rem; }
+  .connect-card    { padding: 2.5rem 1.5rem; }
 }
 
 @media (max-width: 580px) {
-  .contact-sector { padding: 5rem 1.2rem; }
-  .contact-title { font-size: 2.2rem; }
-  .info-panel, .form-plate { padding: 2rem; }
-  .links-grid { grid-template-columns: 1fr; }
+  .contact-sector  { padding: 5rem 1.2rem; }
+  .contact-title   { font-size: 2.2rem; }
+  .connect-card    { padding: 2rem 1.2rem; }
+
+  .connect-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .connect-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
