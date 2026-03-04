@@ -51,12 +51,12 @@ export default {
     company: 'Quad Europe',
     jobType: 'Fully Remote Position',
     responsibilities: 'Key Responsibilities',
-    resp1: 'Debugging .NET applications using Visual Studio (breakpoints, call stack analysis) with JetBrains ReSharper',
-    resp2: 'Reviewing application defects and extracting logs to pinpoint root causes',
-    resp3: 'Writing and optimizing SQL queries for data extraction, validation, analysis, and reporting',
-    resp4: 'Managing end-to-end incidents — collaborating with development teams to reproduce issues, report defects, and track fixes through to resolution',
-    resp5: 'Supporting hotfix coordination and post-deployment validation to ensure application stability',
-    resp6: 'Creating and maintaining runbooks, knowledge articles, and troubleshooting guides',
+    resp1: 'Debugging .NET applications in Visual Studio and JetBrains ReSharper',
+    resp2: 'Application log analysis - identification and elimination of recurring defects',
+    resp3: 'Creating, optimizing, and validating SQL queries supporting operational reporting and data analysis',
+    resp4: 'Close collaboration with development teams to reproduce and document bugs, and verify implemented fixes',
+    resp5: 'Incident management in Cherwell - prioritization, cross-team coordination, deployment oversight',
+    resp6: 'Creating documentation',
     // Education
     education: 'Education',
     degree: "Bachelor's Degree in Applied Computer Science",
@@ -71,7 +71,7 @@ export default {
     cert1Provider: 'Udemy – Jānis Smilga',
     cert2: 'HTML/CSS Tutorial and Projects Course',
     cert2Provider: 'Udemy – Jānis Smilga',
-    cert3: 'Complete React, Next.js Tutorial and Projects Course',
+    cert3: 'NodeJS Tutorial and Projects Course',
     cert3Provider: 'Udemy – Jānis Smilga',
     cert4: 'Javascript Tutorial and Projects Course',
     cert4Provider: 'Udemy – Jānis Smilga',
@@ -97,6 +97,8 @@ export default {
     description: 'Selected projects showcasing my skills and approach to problem solving',
     repository: 'Repository',
     demo: 'Demo',
+    seePhotos: 'See photos',
+    checkLive: 'Check live',
     // Individual projects
     taskSystem: {
       name: 'TaskSystemFront',
@@ -105,10 +107,6 @@ export default {
     barberApp: {
       name: 'BarberAppv2',
       description: 'Barber shop application with booking system and client management'
-    },
-    crushApp: {
-      name: 'CrushApp',
-      description: 'Interactive social application with user interaction features'
     },
     portfolioPage: {
       name: 'Portfolio Page',
