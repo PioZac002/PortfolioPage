@@ -88,7 +88,7 @@ const About = () => {
 
             <div className="stats-container">
               <div className="stat-item">
-                <div className="stat-number">15+</div>
+                <div className="stat-number">7+</div>
                 <div className="stat-label">{t.about.projects}</div>
               </div>
               <div className="stat-item">

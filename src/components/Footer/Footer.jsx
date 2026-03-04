@@ -96,9 +96,6 @@ const Footer = () => {
           <p className="copyright-text">
             © {currentYear} PioZac002. {t.footer.rights}
           </p>
-          <p className="extra-info">
-            {t.footer.builtWith} <span className="pulsing-heart">❤️</span> {t.footer.and} React & Vite
-          </p>
         </div>
       </div>
     </footer>

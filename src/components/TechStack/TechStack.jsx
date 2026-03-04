@@ -12,31 +12,30 @@ const TechStack = () => {
       category: t.techStack.frontend,
       color: '#6C63FF',
       technologies: [
-        'JavaScript', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS',
-        'Shadcn/ui', 'Redux Toolkit', 'React Router 6', 'React Query',
-        'Axios', 'Zod', 'HTML5', 'CSS3'
+        'JavaScript', 'TypeScript', 'React', 'Tailwind CSS',
+        'Shadcn/ui', 'Next.js', 'HTML5', 'CSS'
       ]
     },
     {
       category: t.techStack.backend,
       color: '#00D4FF',
       technologies: [
-        'Node.js', 'Express.js', 'MongoDB',
-        '.NET (OOP basics)', 'Java (OOP basics)', 'C / C++ (basics)'
+        'Node.js', 'Express.js', 'Java (OOP basics)',
+        'C/C++/C#', 'SQL/NoSQL'
       ]
     },
     {
       category: t.techStack.aiAutomation,
       color: '#9D4EDD',
       technologies: [
-        'N8N', 'AI-assisted development', 'GitHub Copilot', 'Prompt Engineering'
+        'N8N', 'AI-assisted development', 'Prompt Engineering'
       ]
     },
     {
       category: t.techStack.tools,
       color: '#F72585',
       technologies: [
-        'Git', 'GitHub', 'Azure DevOps', 'Postman', 'Docker', 'Figma', 'Vite',
+        'Git', 'Azure DevOps', 'Postman', 'Docker', 'Figma', 'Vite',
         'AWS (basics)'
       ]
     }
