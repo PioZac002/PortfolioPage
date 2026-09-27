@@ -1,0 +1,238 @@
+.ql__fields {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ql__degree {
+  display: block;
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 100, 'wght' 700;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ql__cell--uni {
+  grid-column: span 2;
+}
+
+.ql__cell--program {
+  grid-column: span 3;
+}
+
+/* The ruler. Every band on the page is measured against this one scale. */
+
+.ql__timeline {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.ql__timeline-head {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+  flex-wrap: wrap;
+  padding-bottom: 0.875rem;
+}
+
+.ql__scale-note {
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 100, 'wght' 400;
+  font-style: italic;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-3);
+  max-width: 64ch;
+}
+
+.ql__ruler {
+  position: relative;
+  height: 1.375rem;
+  margin-left: 8.5rem;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.ql__year {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  padding-bottom: 0.25rem;
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.625rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
+
+.ql__year::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 1px;
+  height: 4px;
+  background: var(--rule-strong);
+}
+
+.ql__year:first-child {
+  transform: none;
+}
+
+.ql__year:first-child::after {
+  left: 0;
+}
+
+.ql__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6875rem;
+  padding-top: 0.875rem;
+}
+
+.ql__bar {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) 13rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.ql__bar-label {
+  color: var(--ink-2);
+}
+
+.ql__bar-value {
+  font-size: 0.6875rem;
+  color: var(--ink-2);
+}
+
+/* Certifications — a ticked register, each entry naming its issuer. */
+
+.ql__certs {
+  margin-top: clamp(2.25rem, 4.5vw, 3.25rem);
+}
+
+.ql__certs-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.ql__certs ol {
+  list-style: none;
+  border-top: 2px solid var(--ink);
+}
+
+.ql__cert {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr) 16rem;
+  gap: clamp(0.625rem, 1.6vw, 1.25rem);
+  align-items: center;
+  padding: 0.8125rem clamp(0.5rem, 1.4vw, 1rem);
+}
+
+.ql__cert-tick {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--stamp-green);
+  color: var(--stamp-green);
+}
+
+.ql__cert-name {
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 100, 'wght' 500;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.ql__cert-provider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+}
+
+.ql__cert-provider .val {
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1000px) {
+  .ql__fields,
+  .ql__cell--uni,
+  .ql__cell--program {
+    grid-column: auto;
+  }
+
+  .ql__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ql__cell--degree,
+  .ql__cell--program {
+    grid-column: span 2;
+  }
+
+  .ql__bar {
+    grid-template-columns: 7rem minmax(0, 1fr) 10rem;
+  }
+
+  .ql__ruler {
+    margin-left: 7rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .ql__cert {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .ql__cert-provider {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .ql__bar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.375rem;
+  }
+
+  .ql__ruler {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .ql__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ql__cell--degree,
+  .ql__cell--uni,
+  .ql__cell--program {
+    grid-column: auto;
+  }
+}
+
+.ql__uni-full {
+  display: block;
+  margin-top: 0.1875rem;
+  font-size: 0.6875rem;
+  color: var(--ink-3);
+}
+
+/* At narrow widths the year marks collide, so the ruler thins to every other
+   year. Nothing is lost: each bar prints its own period beside it. */
+@media (max-width: 760px) {
+  .ql__year:first-child,
+  .ql__year:nth-child(3),
+  .ql__year:nth-child(5) {
+    display: none;
+  }
+}

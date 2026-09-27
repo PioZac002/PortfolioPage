@@ -1,92 +1,630 @@
-* {
-  margin: 0;
-  padding: 0;
+/* Self-hosted variable faces. Both are SIL OFL; the width and weight axes
+   are the ones the record's type system actually uses, and latin-ext is
+   not optional here — the subject's name is Zaćmiński. */
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: italic;
+  font-weight: 100 900;
+  font-stretch: 62.5% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: italic;
+  font-weight: 100 900;
+  font-stretch: 62.5% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62.5% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62.5% 125%;
+  font-display: swap;
+  src: url('./assets/fonts/archivo-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-stretch: 75% 112.5%;
+  font-display: swap;
+  src: url('./assets/fonts/martian-mono-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-stretch: 75% 112.5%;
+  font-display: swap;
+  src: url('./assets/fonts/martian-mono-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ==========================================================================
+   Personnel technical record — substrate and form primitives.
+
+   The page is a printed service-desk record on greenbar continuous-feed
+   stock. Two lights, one document: [data-copy="top"] is the white top copy
+   under daylight, [data-copy="archive"] is the same sheet on archive
+   microfilm, where only the stamps stay re-inked.
+
+   Ink law: every ink is reserved to exactly one meaning.
+     green  VERIFIED     externally checkable right now
+     amber  QUALIFIED    true but self-limited by the subject
+     blue   REFERENCE    an outbound pointer
+     hatch  NOT ON FILE  absent data, hatched in document ink and never
+                         estimated — a form leaves a gap, it does not stamp
+                         one in colour
+     red    THE MARK     where the reader is on the sheet: registration
+                         marks, caret, focus, the live section in the rail
+   An ink reused for a second meaning is a defect, not a variation.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  --border-radius: 20px;
-  --glow-shadow: 0 0 40px;
+  /* Substrate */
+  --paper: #f6f7f1;
+  --band: #e3ecdc;
+  --paper-sunk: #eceee4;
+  --ink: #191c14;
+  --ink-2: #4a5044;
+  --ink-3: #636a5b;
+  --rule: #c2c9b7;
+  --rule-strong: #6e7664;
+  --perf-hole: #dcdfd2;
+  --perf-edge: #cfd4c4;
+
+  /* Inks — reserved, one meaning each */
+  --stamp-green: #1e6b3c;
+  --stamp-amber: #7e5608;
+  --stamp-blue: #1b4f80;
+  --mark: #a82a1c;
+
+  /* Measure */
+  --sheet-max: 1240px;
+  --perf: 26px;
+  --row: 2.25rem;
+  --gutter: clamp(1rem, 3.2vw, 2.75rem);
+
+  /* Type */
+  --plate: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --data: 'Martian Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Shared time scale — every duration band on the page measures against
+     these two instants and nothing else. */
+  --scale-start: 2021.75; /* 2021-10, the record's first dated fact */
+  --scale-end: 2026.75;   /* the present edge of the record */
+
+  color-scheme: light;
 }
 
-/* Dark Theme (default) */
-:root,
-[data-theme="dark"] {
-  --primary-color: #6C63FF;
-  --secondary-color: #00D4FF;
-  --bg-color: #0d0d1a;
-  --bg-layer-color: #15152a;
-  --glass-color: rgba(255, 255, 255, 0.05);
-  --glass-hover-color: rgba(255, 255, 255, 0.08);
-  --text-color: #e8e8f2;
-  --gray-color: #8b8b9f;
-  --border-color: rgba(108, 99, 255, 0.25);
-  --glow-color: rgba(108, 99, 255, 0.5);
-  --card-bg: rgba(21, 21, 36, 0.7);
-  --gradient-start: #6C63FF;
-  --gradient-end: #00D4FF;
-}
+[data-copy='archive'] {
+  --paper: #121510;
+  --band: #1b1f17;
+  --paper-sunk: #0d0f0a;
+  --ink: #e8ecdf;
+  --ink-2: #9ca591;
+  --ink-3: #818a77;
+  --rule: #363c2e;
+  --rule-strong: #6b7361;
+  --perf-hole: #1e2219;
+  --perf-edge: #2a2f23;
 
-/* Light Theme */
-[data-theme="light"] {
-  --primary-color: #5548E6;
-  --secondary-color: #00B4D8;
-  --bg-color: #f0f0ff;
-  --bg-layer-color: #fafaff;
-  --glass-color: rgba(0, 0, 0, 0.04);
-  --glass-hover-color: rgba(0, 0, 0, 0.08);
-  --text-color: #1a1a2e;
-  --gray-color: #6c757d;
-  --border-color: rgba(85, 72, 230, 0.25);
-  --glow-color: rgba(85, 72, 230, 0.35);
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --gradient-start: #5548E6;
-  --gradient-end: #00B4D8;
+  --stamp-green: #5cc184;
+  --stamp-amber: #dca92f;
+  --stamp-blue: #77aee0;
+  --mark: #ea6853;
+
+  color-scheme: dark;
 }
 
 html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 100, 'wght' 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  line-height: 1.7;
-  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Browser surfaces — the parts of the page nobody draws still carry the
+   record's palette.
+   -------------------------------------------------------------------------- */
+
+::selection {
+  background: var(--stamp-blue);
+  color: var(--paper);
+}
+
+:root {
+  caret-color: var(--mark);
+  accent-color: var(--mark);
+  scrollbar-color: var(--rule-strong) var(--paper-sunk);
+  scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
-  width: 11px;
+  width: 13px;
+  height: 13px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-layer-color);
-  border-left: 1px solid var(--border-color);
+  background: var(--paper-sunk);
+  border-left: 1px solid var(--rule);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-  border-radius: 6px;
-  border: 2px solid var(--bg-layer-color);
+  background: var(--rule-strong);
+  border: 3px solid var(--paper-sunk);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #8078ff, #33dcff);
-  box-shadow: 0 0 15px var(--primary-color);
+  background: var(--ink-2);
 }
 
-/* Reduced Motion Support */
+a {
+  color: inherit;
+  text-decoration-color: var(--stamp-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--mark);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   The sheet: continuous-feed stock with tractor perforation down both edges.
+   -------------------------------------------------------------------------- */
+
+.sheet {
+  position: relative;
+  min-height: 100vh;
+  padding-inline: var(--perf);
+  background-image:
+    radial-gradient(circle at calc(var(--perf) / 2) 50%, var(--perf-hole) 0 4px, transparent 4.5px),
+    radial-gradient(circle at calc(100% - var(--perf) / 2) 50%, var(--perf-hole) 0 4px, transparent 4.5px),
+    linear-gradient(to right, transparent calc(var(--perf) - 1px), var(--perf-edge) calc(var(--perf) - 1px), var(--perf-edge) var(--perf), transparent var(--perf)),
+    linear-gradient(to left, transparent calc(var(--perf) - 1px), var(--perf-edge) calc(var(--perf) - 1px), var(--perf-edge) var(--perf), transparent var(--perf));
+  background-size: 100% 26px, 100% 26px, 100% 100%, 100% 100%;
+  background-repeat: repeat-y, repeat-y, no-repeat, no-repeat;
+}
+
+.sheet__inner {
+  max-width: var(--sheet-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   Form primitives
+   -------------------------------------------------------------------------- */
+
+/* Small tracked mono label that names a field. Not an eyebrow: it labels a
+   datum, and it never sits above a heading on its own. */
+.lbl {
+  display: block;
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 500;
+  font-size: 0.625rem;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.val {
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* Prose is never set in mono; data is never set in Archivo. */
+.prose {
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 100, 'wght' 400;
+  font-size: 1.0625rem;
+  line-height: 1.68;
+  max-width: 68ch;
+  color: var(--ink-2);
+}
+
+.prose strong,
+.prose em {
+  color: var(--ink);
+  font-variation-settings: 'wdth' 100, 'wght' 600;
+  font-style: normal;
+}
+
+/* Field cell: label over value, boxed by hairlines. */
+.cell {
+  padding: 0.6875rem 0.875rem 0.8125rem;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  min-width: 0;
+}
+
+.cell .lbl {
+  margin-bottom: 0.4375rem;
+}
+
+.cell__grid {
+  display: grid;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Section head: the record's own addressing. The § number is how a record
+   refers to its own parts, and the index rail navigates by it. */
+.sec {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem) 0;
+  scroll-margin-top: 6.5rem;
+}
+
+.sec__head {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--ink);
+  flex-wrap: wrap;
+}
+
+.sec__no {
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  flex: none;
+}
+
+.sec__title {
+  font-family: var(--plate);
+  font-variation-settings: 'wdth' 112, 'wght' 800;
+  font-size: clamp(1.5rem, 3.4vw, 2.375rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.sec__count {
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 400;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-left: auto;
+  padding-bottom: 0.25rem;
+  white-space: nowrap;
+}
+
+.sec__note {
+  margin-top: 1.25rem;
+}
+
+/* Stamp: reserved ink, one meaning each. */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.1875rem 0.4375rem;
+  border: 1.5px solid currentColor;
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 700;
+  font-size: 0.625rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(-0.6deg);
+}
+
+.stamp--verified { color: var(--stamp-green); }
+.stamp--qualified { color: var(--stamp-amber); }
+.stamp--reference { color: var(--stamp-blue); }
+
+/* Absence is printed, not coloured: the gap is hatched in document ink so it
+   reads as data the record does not hold rather than as an alarm. */
+.stamp--absent {
+  color: var(--ink-2);
+  border-style: dashed;
+}
+
+/* The hatch marks the gap; it does not run through the words that name it. */
+.stamp--absent .stamp__dot {
+  width: 9px;
+  height: 9px;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    currentColor 0 1px,
+    transparent 1px 4px
+  );
+}
+
+.stamp__dot {
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  flex: none;
+}
+
+/* Register: greenbar striping follows the rows, so the banding is the
+   register's function and not a texture laid underneath it. */
+.reg {
+  border-bottom: 1px solid var(--rule);
+}
+
+.reg__row {
+  border-top: 1px solid var(--rule);
+}
+
+.reg__row:nth-child(even) {
+  background: var(--band);
+}
+
+/* Duration band on the shared scale. */
+.span {
+  position: relative;
+  height: 9px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule);
+}
+
+.span__fill {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  background: var(--ink-2);
+  border: 1px solid var(--ink);
+}
+
+/* No dates on file means no extent may be drawn: a filled or hatched bar
+   across the scale would claim the engagement covered the whole record. The
+   track stays empty and only says so. */
+.span__fill--open {
+  background: transparent;
+  border: 0;
+}
+
+.span__fill--open::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.span__tick {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--ink);
+}
+
+/* Action, in the form's own vocabulary: a tick box and its printed label. */
+.act {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.6875rem 1rem;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 140ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.act:hover,
+.act:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.act__box {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid currentColor;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.act__box svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0;
+}
+
+.act:hover .act__box svg,
+.act:focus-visible .act__box svg,
+.act[aria-pressed='true'] .act__box svg {
+  opacity: 1;
+}
+
+.act--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.act--primary:hover,
+.act--primary:focus-visible {
+  background: var(--mark);
+  border-color: var(--mark);
+  color: var(--paper);
+}
+
+.icon {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.icon--solid {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* --------------------------------------------------------------------------
+   Paper feed: the line printer advances the sheet one line at a time. This
+   is the page's single authored motion, applied to register rows only.
+   -------------------------------------------------------------------------- */
+
+@keyframes feed {
+  from {
+    opacity: 0;
+    transform: translateY(-0.55rem);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.feed > * {
+  animation: feed 460ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 65ms);
+}
+
+.feed--armed > * {
+  animation-play-state: paused;
+  opacity: 0;
+}
+
+.feed--running > * {
+  animation-play-state: running;
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .feed > *,
+  .feed--armed > * {
+    animation: none;
+    opacity: 1;
+    clip-path: none;
+    transform: none;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
   }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --perf: 15px;
+  }
+
+  .sheet {
+    background-size: 100% 22px, 100% 22px, 100% 100%, 100% 100%;
+  }
+}
+
+/* Skip link, set as a form tab rather than a floating pill. */
+
+.skip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -110%);
+  z-index: 90;
+  padding: 0.625rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--data);
+  font-variation-settings: 'wdth' 87.5, 'wght' 600;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip:focus-visible {
+  transform: translate(-50%, 0);
 }

@@ -2,12 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/portfolio-svgrepo-com.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PioZac002</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/record.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Piotr Zaćmiński - Technical Record</title>
+    <meta name="description" content="Personnel technical record of Piotr Zaćmiński: production defect diagnosis at Quad Europe, shipped React and TypeScript applications, Applied Computer Science degree from Politechnika Bydgoska." />
+    <meta name="theme-color" content="#f6f7f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121510" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Resolve copy (theme) and language before first paint so the sheet never flashes.
+      (function () {
+        try {
+          var copy = localStorage.getItem('record-copy');
+          if (copy !== 'top' && copy !== 'archive') {
+            copy = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'archive' : 'top';
+          }
+          document.documentElement.setAttribute('data-copy', copy);
+          var lang = localStorage.getItem('record-lang');
+          if (lang !== 'pl' && lang !== 'en') lang = 'en';
+          document.documentElement.setAttribute('lang', lang);
+        } catch (e) {
+          document.documentElement.setAttribute('data-copy', 'top');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

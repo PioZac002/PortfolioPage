@@ -1,148 +1,207 @@
 export default {
-  // Navbar
-  nav: {
-    home: 'Home',
-    about: 'About',
-    technologies: 'Technologies',
-    projects: 'Projects',
-    aiInnovation: 'AI & Innovation',
-    contact: 'Contact'
+  meta: {
+    recordNo: 'REC-2025-PZ-001',
+    recordTitle: 'Technical Personnel Record',
+    recordTitleShort: 'Technical Record',
+    status: 'Open',
+    revision: 'Rev. 09.2026',
+    form: 'Form 3A-INC'
   },
 
-  // Hero Section
-  hero: {
-    greeting: 'Hello, I am',
+  index: {
+    label: 'Index',
+    skip: 'Skip to record',
+    subject: 'Subject',
+    diagnosis: 'Diagnosis',
+    competence: 'Competence',
+    construction: 'Construction',
+    qualifications: 'Qualifications',
+    closure: 'Closure',
+    jumpTo: 'Jump to section'
+  },
+
+  controls: {
+    copy: 'Copy',
+    copyTop: 'Original copy',
+    copyArchive: 'Archive microfilm',
+    copyHint: 'Switch between the original document and the archive microfilm',
+    lang: 'Language',
+    langHint: 'Switch language'
+  },
+
+  subject: {
+    section: 'Subject',
     name: 'Piotr Zaćmiński',
-    role: 'Full Stack Developer & AI Enthusiast',
-    description: 'I develop modern web applications using the latest technologies, exploring the potential of artificial intelligence to optimize workflows. I transform ideas into working solutions.',
-    exploreProjects: 'Explore Projects',
-    contactMe: 'Contact Me',
-    scrollDown: 'Scroll Down'
+    role: 'Junior full-stack developer · Operations Analyst (L2/L3)',
+    fieldSubject: 'Subject',
+    fieldClassification: 'Classification',
+    fieldOpened: 'Record opened',
+    fieldLocation: 'Location',
+    valueClassification: 'Junior full-stack developer',
+    valueOpened: '09.2021',
+    valueLocation: 'Bydgoszcz, Poland · Remote',
+    photoLabel: 'Photograph on file',
+
+    sideALabel: 'Side A',
+    sideATitle: 'Diagnosis',
+    sideALead: 'Identifying the root cause of application issues - from logs and code to database state and business logic.',
+    sideA1: '.NET solutions - debugging in Visual Studio and JetBrains ReSharper',
+    sideA2: 'SQL queries and log analysis - from symptom to root cause',
+    sideA3: 'Tickets in Cherwell and Halo - retracing user steps, reproducing defects, and working with developers',
+    sideAFoot: '6 duties on record',
+
+    sideBLabel: 'Side B',
+    sideBTitle: 'Construction',
+    sideBLead: 'Designing and deploying full-stack web applications - from the database to the user interface.',
+    sideB1: 'React · JavaScript · TypeScript · Node.js · SQL',
+    sideB2: '4 public repositories',
+    sideB3: '3 deployed and active systems',
+    sideBFoot: '4 systems on record',
+
+    parityNote: 'Diagnosing at work, building after hours - only together do they form the full profile.',
+
+    descriptionLabel: 'Subject statement',
+    description1: '{fullStack}. By day I diagnose production systems; after hours I build my own web applications in JavaScript/TypeScript - from the data layer to the user interface.',
+    description2: 'I write object-oriented and functional code. I am comfortable reading and analyzing code across different technologies, which allows me to quickly find my bearings in unfamiliar codebases and new environments. One of my strongest areas is {ai}: I work with popular models and AI agents, designing my own workflows around them.',
+    description3: 'I learn quickly - diagnostic work taught me how to analyze unfamiliar code and trace problems back to their source. I make a point of writing code that is {clean}.',
+    fullStack: 'Junior full-stack developer',
+    ai: 'working with AI tools',
+    clean: 'readable and easy to maintain'
   },
 
-  // About Section
-  about: {
-    label: 'Get to know me',
-    title: 'About Me',
-    subtitle: 'Technology Enthusiast',
-    description1: 'I am an aspiring {fullStack} developer passionate about creating modern web applications. I specialize in web development using the JavaScript/TypeScript ecosystem and its frameworks, building solutions from frontend to backend.',
-    description2: 'I am fascinated by {ai} and its application in everyday use. I constantly develop my skills, experimenting with new frameworks and technologies.',
-    description3: 'I believe that good code is one that is {clean}. I treat each project as an opportunity to learn something new and improve my skills.',
-    fullStack: 'full-stack developer',
-    ai: 'artificial intelligence',
-    clean: 'clean, scalable and easy to maintain',
-    projects: 'Projects',
-    yearsLearning: 'Years Learning',
-    commitment: 'Commitment',
-    creativity: 'Creativity',
-    creativityDesc: 'I create unique solutions that combine aesthetics with functionality',
-    performance: 'Performance',
-    performanceDesc: 'I optimize code for maximum speed and scalability',
-    precision: 'Precision',
-    precisionDesc: 'I care about every detail, from UI/UX to application architecture',
-    innovation: 'Innovation',
-    innovationDesc: 'I use the latest technologies and trends in development',
-    // Real CV data
-    realName: 'Piotr Zaćmiński',
-    currentRole: 'Full Stack Developer & AI Enthusiast',
-    // Professional Experience
-    workExperience: 'Work Experience',
-    jobTitle: 'Operation Analyst',
-    company: 'Quad Europe',
-    jobType: 'Fully Remote Position',
-    responsibilities: 'Key Responsibilities',
-    resp1: 'Debugging .NET applications in Visual Studio and JetBrains ReSharper',
-    resp2: 'Application log analysis - identification and elimination of recurring defects',
-    resp3: 'Creating, optimizing, and validating SQL queries supporting operational reporting and data analysis',
-    resp4: 'Close collaboration with development teams to reproduce and document bugs, and verify implemented fixes',
-    resp5: 'Incident management in Cherwell - prioritization, cross-team coordination, deployment oversight',
-    resp6: 'Creating documentation',
-    // Education
-    education: 'Education',
-    degree: "Bachelor's Degree in Applied Computer Science",
-    university: 'Politechnika Bydgoska',
-    universityFull: 'Bydgoszcz University of Science and Technology',
-    fieldOfStudy: 'Computer Science and Technology',
-    studyPeriod: 'October 2021 – February 2025',
-    programDescription: 'Program covering software engineering, system design, and system modeling',
-    // Certifications & Courses
-    certifications: 'Certifications & Courses',
-    cert1: 'Complete React, Next.js & TypeScript Projects Course 2025',
-    cert1Provider: 'Udemy – Jānis Smilga',
-    cert2: 'HTML/CSS Tutorial and Projects Course',
-    cert2Provider: 'Udemy – Jānis Smilga',
-    cert3: 'NodeJS Tutorial and Projects Course',
-    cert3Provider: 'Udemy – Jānis Smilga',
-    cert4: 'Javascript Tutorial and Projects Course',
-    cert4Provider: 'Udemy – Jānis Smilga',
-    cert5: 'Agile Project Management – Agile PM Foundation',
-    cert5Provider: 'Training Centre ProcessTeam'
+  diagnosis: {
+    section: 'Diagnosis',
+    count: '1 commercial engagement',
+    note: 'Closer to the code than typical support - from ticket intake to identifying the root cause and verifying the solution.',
+    role: 'Operations Analyst (L2/L3)',
+    employer: 'Quad Graphics',
+    employerLabel: 'Employer',
+    arrangement: 'Fully remote',
+    arrangementLabel: 'Work arrangement',
+    periodLabel: 'Period',
+    periodAbsent: 'Undisclosed',
+    findingsLabel: 'Duties on record',
+
+    finding1: 'Analyzing and debugging .NET solutions in Visual Studio with JetBrains ReSharper - tracing code execution to the exact point of failure',
+    finding2: 'Writing SQL queries - from quick data checks to complex diagnostic and reporting queries',
+    finding3: 'Analyzing application logs and pinpointing error sources using diagnostic tools',
+    finding4: 'Retracing user steps to reproduce defects under controlled conditions',
+    finding5: 'Determining the root cause - application layer, data, IT infrastructure, or business logic',
+    finding6: 'Handling tickets in Cherwell and Halo - prioritization, collaboration with development teams, fix verification, and documentation',
+
+    toolsLabel: 'Diagnostic toolkit',
+    period: '09.2022 - present'
   },
 
-  // Tech Stack Section
-  techStack: {
-    label: 'My arsenal',
-    title: 'Tech Stack',
-    description: 'Technologies and tools I use to create modern applications',
+  competence: {
+    section: 'Competence',
+    note: 'Skills used and developed in practice. Basic proficiency is indicated directly next to the relevant entry.',
+    countSuffix: 'entries',
     frontend: 'Frontend',
     backend: 'Backend',
-    aiAutomation: 'AI & Automation',
-    tools: 'Tools & Platforms'
+    automation: 'Automation & AI',
+    tooling: 'Tooling & Platforms',
+    oopBasics: 'Solid OOP foundations',
+    basics: 'Basics',
+    process: 'Testing & ways of working',
+    agile: 'Agile / Scrum - project management'
   },
 
-  // Projects Section
-  projects: {
-    label: 'My work',
-    title: 'Projects',
-    description: 'Selected projects showcasing my skills and approach to problem solving',
+  construction: {
+    section: 'Construction',
+    note: 'Published systems. Each entry links to a public repository, and deployed systems also to their live version.',
+    countSuffix: 'entries',
+    colEntry: 'System',
+    colStack: 'Stack',
+    colDeploy: 'Deployment',
+    colAttach: 'Assets',
     repository: 'Repository',
-    demo: 'Demo',
-    seePhotos: 'See photos',
-    checkLive: 'Check live',
-    // Individual projects
-    taskSystem: {
-      name: 'TaskSystemFront',
-      description: 'Task management system with user interface and advanced tracking'
-    },
-    barberApp: {
-      name: 'BarberAppv2',
-      description: 'Barber shop application with booking system and client management'
-    },
-    portfolioPage: {
-      name: 'Portfolio Page',
-      description: 'Personal portfolio website – modern design, animations, multilingual support and dark/light theme'
-    }
+    live: 'Live',
+    deployed: 'Deployed',
+    noDeploy: 'Repository only',
+    attachments: 'Attachments',
+    noAttachments: 'None on record',
+    openAttachments: 'View attachments',
+    attachment: 'Attachment',
+    of: 'of',
+    closeViewer: 'Close preview',
+    prev: 'Previous',
+    next: 'Next',
+    trailLabel: 'Deployment log',
+    trailAsAt: 'As of',
+    trailState: 'State',
+    trailDate: 'Date',
+    openTrail: 'View deployment log',
+    closeTrail: 'Close deployment log',
+
+    taskSystemName: 'TaskSystem',
+    taskSystemDesc: 'Jira-inspired issue tracker - projects, issues with 8 workflow states, teams, comments with @mentions, and a drag-and-drop Kanban board. React frontend, a custom Java REST API (Spring Boot, Spring Security with JWT), PostgreSQL database, the whole stack running in Docker.',
+    barberAppName: 'BarberAppv2',
+    barberAppDesc: 'Web application for a barbershop with a full appointment booking system. Separate views and access levels for three roles: client, barber, and administrator.',
+    portfolioName: 'This record',
+    portfolioDesc: 'The interface you are currently viewing - a technical personnel record presented as a bilingual archival form.',
+
+    trailOpened: 'Repository initialized',
+    trailLastCommit: 'Latest commit',
+    trailDeployDate: 'Production deployment',
+    layerFrontend: 'Frontend',
+    layerBackend: 'Backend',
+    versionCurrent: 'Current version',
+    versionPrevious: 'Previous version',
+    hala4Name: 'Hala 4',
+    hala4Desc: 'Landing page for a concept sports-car rental. The centrepiece is a scroll-driven walk-around film of the car, rendered in WebGL (React Three Fiber with a custom shader), that fills in a vehicle handover protocol as you scroll. A built-in AI chat runs through its own Node.js server with any OpenAI-compatible provider (Groq by default), streams its answers (SSE), knows only the price list on the page, and falls back to an offline mode when the model is unavailable. Bilingual PL/EN, the whole site in a single Docker container.',
+    layerAi: 'AI assistant'
   },
 
-  // AI Innovation Section
-  aiInnovation: {
-    label: 'The future of development',
-    title: 'AI & Innovation',
-    description: 'I use artificial intelligence to accelerate development and create smarter solutions',
-    automation: 'Automation',
-    automationDesc: 'N8N workflow automation for more efficient processes',
-    aiAssisted: 'AI-Assisted Development',
-    aiAssistedDesc: 'GitHub Copilot and prompt engineering in daily work',
-    modernTools: 'Modern Tools',
-    modernToolsDesc: 'Integrating AI with traditional development for better results'
+  qualifications: {
+    section: 'Qualifications',
+    note: 'Formal degree and completed courses.',
+    degreeLabel: 'Degree',
+    degree: 'B.Eng. in Applied Computer Science',
+    universityLabel: 'Institution',
+    university: 'Politechnika Bydgoska',
+    universityFull: 'Bydgoszcz University of Science and Technology',
+    fieldLabel: 'Discipline',
+    field: 'Applied Computer Science',
+    periodLabel: 'Study period',
+    period: '09.2021 - 03.2025',
+    programLabel: 'Curriculum',
+    program: 'Algorithms and data structures, software engineering, object-oriented and functional programming, operating systems and networks, relational and non-relational databases',
+    certificationsLabel: 'Certifications & courses',
+    providerLabel: 'Issuing body',
+    cert1: 'Complete React, Next.js & TypeScript Projects Course 2025',
+    cert1Provider: 'Udemy - Jānis Smilga',
+    cert2: 'HTML/CSS Tutorial and Projects Course',
+    cert2Provider: 'Udemy - Jānis Smilga',
+    cert3: 'NodeJS Tutorial and Projects Course',
+    cert3Provider: 'Udemy - Jānis Smilga',
+    cert4: 'JavaScript Tutorial and Projects Course',
+    cert4Provider: 'Udemy - Jānis Smilga',
+    cert5: 'Agile Project Management - AgilePM® Foundation',
+    cert5Provider: 'ProcessTeam Training Centre',
+    timelineLabel: 'Activity timeline',
+    timelineNote: 'One shared scale, proportional to the actual duration of each activity.',
+    rowDegree: 'Education',
+    rowEngagement: 'Professional experience',
+    rowCertified: 'Certification',
+    languagesLabel: 'Languages',
+    languages: 'Polish - native · English - B2+/C1 · German - A2',
+    cert6: 'MERN 2025 Edition - MongoDB, Express, React and NodeJS',
+    cert6Provider: 'Udemy - Jānis Smilga'
   },
 
-  // Contact Section
-  contact: {
-    label: 'Let\'s connect',
-    title: 'Contact',
-    description: 'I\'m happy to talk about new projects, collaboration, or just technology. Feel free to reach out!',
-    githubBtn: 'GitHub',
-    linkedinBtn: 'LinkedIn',
-    emailBtn: 'Copy e-mail',
-    emailCopied: 'E-mail copied to clipboard!'
-  },
-
-  // Footer
-  footer: {
-    tagline: 'Building the future, one line of code at a time',
-    rights: 'All rights reserved',
-    builtWith: 'Built with',
-    and: 'and'
+  closure: {
+    section: 'Closure',
+    note: 'Record active. The quickest way to reach me is through the channels below.',
+    contactLabel: 'Contact channels',
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    email: 'Copy email',
+    emailCopied: 'Email copied',
+    emailAria: 'Copy email address to clipboard',
+    signedLabel: 'Record maintained by',
+    signedValue: 'Piotr Zaćmiński',
+    builtLabel: 'Built with',
+    rights: 'All rights reserved'
   }
 };
