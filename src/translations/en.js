@@ -135,7 +135,7 @@ export default {
     closeTrail: 'Close deployment log',
 
     taskSystemName: 'TaskSystem',
-    taskSystemDesc: 'Jira-inspired issue tracker - projects, issues with 8 workflow states, teams, comments with @mentions, and a drag-and-drop Kanban board. React frontend, a custom Java REST API (Spring Boot, Spring Security with JWT), PostgreSQL database, the whole stack running in Docker.',
+    taskSystemDesc: 'Jira-inspired issue tracker - projects, issues with 8 workflow states, teams, comments with @mentions, and a drag-and-drop Kanban board. React frontend, a custom Java REST API (Spring Boot, Spring Security with JWT) and a PostgreSQL database. The whole stack runs on Google Cloud: frontend and backend on Cloud Run, database on Cloud SQL.',
     barberAppName: 'BarberAppv2',
     barberAppDesc: 'Web application for a barbershop with a full appointment booking system. Separate views and access levels for three roles: client, barber, and administrator.',
     portfolioName: 'This record',
@@ -146,6 +146,7 @@ export default {
     trailDeployDate: 'Production deployment',
     layerFrontend: 'Frontend',
     layerBackend: 'Backend',
+    layerCloud: 'Cloud',
     versionCurrent: 'Current version',
     versionPrevious: 'Previous version',
     hala4Name: 'Hala 4',

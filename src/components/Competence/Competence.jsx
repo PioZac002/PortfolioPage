@@ -51,7 +51,7 @@ const Competence = () => {
         { name: 'Postman' },
         { name: 'Figma' },
         { name: 'Vite' },
-        { name: 'AWS / Azure DevOps', qualifier: t.competence.basics }
+        { name: 'AWS / Azure DevOps / Google Cloud', qualifier: t.competence.basics }
       ]
     },
     {

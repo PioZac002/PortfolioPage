@@ -52,10 +52,14 @@ const Construction = () => {
         {
           name: t.construction.layerBackend,
           stack: ['Java 25', 'Spring Boot 4', 'Spring Security (JWT)', 'JPA', 'PostgreSQL', 'Docker']
+        },
+        {
+          name: t.construction.layerCloud,
+          stack: ['Google Cloud Run', 'Cloud SQL', 'Secret Manager', 'Artifact Registry']
         }
       ],
       repo: 'https://github.com/PioZac002/TaskSystemm',
-      live: 'http://komuna.site/',
+      live: 'https://tasksystem-frontend-687047392177.europe-west1.run.app/',
       opened: '08.10.2025',
       lastCommit: '27.09.2026',
       shots: shotsFor('tasksystem')
@@ -76,7 +80,7 @@ const Construction = () => {
         }
       ],
       repo: 'https://github.com/PioZac002/BarberAppv2',
-      live: 'https://barberappv2-1.onrender.com/',
+      live: 'https://barberappv2026.onrender.com/',
       opened: '12.05.2025',
       lastCommit: '26.09.2026',
       shots: shotsFor('barberapp')
@@ -97,7 +101,7 @@ const Construction = () => {
         }
       ],
       repo: 'https://github.com/PioZac002/hala-4',
-      live: null,
+      live: 'https://hala-4.onrender.com/',
       opened: '24.09.2026',
       lastCommit: '27.09.2026',
       shots: shotsFor('hala4')
