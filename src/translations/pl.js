@@ -133,7 +133,7 @@ export default {
     closeTrail: 'Ukryj dziennik wdrożeń',
 
     taskSystemName: 'TaskSystem',
-    taskSystemDesc: 'System do śledzenia zadań inspirowany Jirą - projekty, zgłoszenia z 8 statusami, zespoły, komentarze z @wzmiankami i tablica Kanban z przeciąganiem zadań. Frontend w React, własne REST API w Javie (Spring Boot, Spring Security z JWT), baza PostgreSQL, całość uruchamiana w Dockerze.',
+    taskSystemDesc: 'System do śledzenia zadań inspirowany Jirą - projekty, zgłoszenia z 8 statusami, zespoły, komentarze z @wzmiankami i tablica Kanban z przeciąganiem zadań. Frontend w React, własne REST API w Javie (Spring Boot, Spring Security z JWT) i baza PostgreSQL. Całość działa w chmurze Google Cloud: frontend i backend na Cloud Run, baza w Cloud SQL.',
     barberAppName: 'BarberAppv2',
     barberAppDesc: 'Aplikacja webowa dla salonu barberskiego z pełnym systemem rezerwacji wizyt. Osobne widoki i uprawnienia dla trzech ról: klienta, barbera i administratora.',
     portfolioName: 'Niniejszy rejestr',
@@ -144,6 +144,7 @@ export default {
     trailDeployDate: 'Wdrożenie produkcyjne',
     layerFrontend: 'Frontend',
     layerBackend: 'Backend',
+    layerCloud: 'Chmura',
     versionCurrent: 'Aktualna wersja',
     versionPrevious: 'Poprzednia wersja',
     hala4Name: 'Hala 4',

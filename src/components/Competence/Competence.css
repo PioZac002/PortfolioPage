@@ -41,6 +41,9 @@
   padding: 0.375rem 0.5625rem 0.4375rem;
   border: 1px solid var(--rule-strong);
   background: var(--paper);
+  /* Long combined entries wrap inside the chip instead of running off a phone screen. */
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .cp__name {
@@ -50,7 +53,8 @@
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--ink);
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .cp__entry--qualified {
